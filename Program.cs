@@ -4,6 +4,11 @@ namespace Mega_Project_List
 {
     class Program
     {
+        /* Layout of the program is a bit inelegant but I wanted to be able to have all solutions in one program 
+         * without making it too overbloated with files, so each section of the project list at https://github.com/karan/Projects
+         * is its own class and the function calls are commented out below to display them for use.
+        */
+
         static void Main(string[] args)
         {
             // https://github.com/karan/Projects main page

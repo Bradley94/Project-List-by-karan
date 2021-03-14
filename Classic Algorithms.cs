@@ -86,5 +86,86 @@ namespace Mega_Project_List
             }
             Console.WriteLine($"There are {count} primes up to {n}");
         }
+        /// <summary>
+        /// Implement two types of sorting algorithms:
+        /// Part 1: Bubble sort
+        /// https://www.geeksforgeeks.org/bubble-sort/
+        /// </summary>
+        /// <param name="arr"></param>
+        public void BubbleSort(int[] arr)
+        {
+            int n = arr.Length;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if(arr[j] > arr[j+1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j+1] = temp;
+                    }
+                }
+            }
+
+            // print array
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(arr[i] + " ");           
+            }
+            Console.WriteLine("\nArray sorted");
+        }
+
+        /// <summary>
+        /// Optimised Bubble sort - 
+        /// Above always runs O(n^2), this prevents that by stopping the algorithm if no swap is made.
+        /// </summary>
+        /// <param name="arr"></param>
+        public void BubbleSortOptimised(int[] arr)
+        {
+            bool swapped;
+            int n = arr.Length;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                swapped = false;
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        // swap arr[j] and arr[j+1]
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                        swapped = true;
+                    }
+                }
+
+                // break if no two elements are swapped
+                if (swapped == false)
+                {
+                    break;
+                }
+            }
+
+            // print array
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine("\nArray sorted");
+        }
+
+
+        /// <summary>
+        /// Implement two types of sorting algorithms:
+        /// Part 2: Merge sort
+        /// </summary>
+        /// <param name="arr"></param>
+        public void MergeSort(int[] arr)
+        {
+
+        }
     }
 }

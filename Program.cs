@@ -25,7 +25,9 @@ namespace Mega_Project_List
 
             Classic_Algorithms algorithms = new Classic_Algorithms();
             // algorithms.CollatzConjecture(500);
-            algorithms.SieveOfEratosthenes(100);
+            // algorithms.SieveOfEratosthenes(100);
+            // algorithms.BubbleSort(new int[] { 50, 83, 39, 1, 2, 68, 5, 99, 12, 6, 19, 3, 2, 8 });
+            // algorithms.BubbleSortOptimised(new int[] { 50, 83, 39, 1, 2, 68, 5, 99, 12, 6, 19, 3, 2, 8 });
         }
     }
 }

@@ -163,7 +163,7 @@ namespace Mega_Project_List
         /// Part 2: Merge sort
         /// </summary>
         /// <param name="arr"></param>
-        public void MergeSort(int[] arr)
+        public void MergeSort(int[] listOfNumbers)
         {
 
         }

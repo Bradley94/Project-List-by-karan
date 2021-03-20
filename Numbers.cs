@@ -255,8 +255,60 @@ namespace Mega_Project_List
                 }
 
             }
-        }   
+        }
 
+        /// <summary>
+        /// Binary to Decimal and Back Converter - 
+        /// Develop a converter to convert a decimal number to binary or a binary number to its decimal equivalent.
+        /// </summary>
+        /// <param name="num"></param>
+        public void BinaryToDecimalAndBack(decimal num)
+        {
+            List<int> binNums = new List<int>();
+
+            // Divide number by two, get quotient for next digit
+            // Remainder is the binary digit; repeat until quotient = 0
+            while (num > 1)
+            {
+                int remainder = Decimal.ToInt32(num % 2);
+                binNums.Add(remainder);
+                num /= 2;
+            }
+
+            // print result to screen
+            binNums.Reverse();
+            Console.Write("Decimal to binary: ");
+            foreach (var item in binNums)
+            {
+                Console.Write(item);
+            }
+
+            // Convert back to decimal
+            int total = 0;
+            int length = binNums.Count;
+            int count = length;
+            
+
+            for (int i = 0; i < length; i++)
+            {
+                // ignore any binary 0s 
+                if (binNums[i] == 0)
+                {
+                    count--;
+                    continue;
+                }
+                //for each binary 1: do 2 to the power of index position -1 
+                else
+                {
+                    double y = Math.Pow(2, count-1);
+                    total += Convert.ToInt32(y);
+                    count--;
+                }
+            }
+
+            // TODO
+            Console.WriteLine("\nBinary to decimal: " + total);
+        }
 
     }
 }

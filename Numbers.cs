@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Mega_Project_List
 {
@@ -310,5 +311,75 @@ namespace Mega_Project_List
             Console.WriteLine("\nBinary to decimal: " + total);
         }
 
+        /// <summary>
+        /// Coin Flip Simulation - 
+        /// Write some code that simulates flipping a single coin however many times the user decides. 
+        /// The code should record the outcomes and count the number of tails and heads.
+        /// </summary>
+        public void CoinFlip(int flips)
+        {
+            Random rand = new Random();
+            int heads = 0;
+            int tails = 0;
+
+            for (int i = 0; i < flips; i++)
+            {
+                if (rand.Next(0,2) == 0)
+                {
+                    heads++;
+                }
+                else
+                {
+                    tails++;
+                }
+            }
+
+            Console.WriteLine("Coin flip results for " + flips + " flips:" + "\nHeads: " + heads + "\nTails: " + tails);
+            double total = heads + tails;
+            double  percentHeads = heads / total * 100;
+            double  percentTails = tails / total * 100;
+            Console.WriteLine("This is " + Math.Round(percentHeads,2) + "% rate for heads and " + Math.Round(percentTails, 2) + "% rate for tails");
+        }
+        /// <summary>
+        /// Dice roller -
+        /// Dice rolling equivalent of the coin flip method above
+        /// </summary>
+        /// <param name="rolls"></param>
+        public void DiceRoller()
+        {
+            Console.WriteLine("Enter how many rolls you wish to make.");
+            int rolls = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the number of faces on the die:");
+            int die_size = Convert.ToInt32(Console.ReadLine());
+
+            Thread.Sleep(500);
+            Console.Write("Rolling dice");
+
+            string text = "...";
+            foreach (char c in text)
+            {
+                Thread.Sleep(1000);
+                Console.Write(c);     
+            }
+            Thread.Sleep(1000);
+
+            Random rand = new Random();
+            int[] dieSides = new int[die_size];
+
+            for (int i = 0; i < rolls; i++)
+            {
+                int result = rand.Next(0, die_size);
+                dieSides[result] += 1;
+            }
+
+            int face = 1;
+            Console.WriteLine("\n");
+            foreach (var item in dieSides)
+            {
+                Console.WriteLine(face + "s: " + item);
+                face++;
+            }
+        }
     }
 }

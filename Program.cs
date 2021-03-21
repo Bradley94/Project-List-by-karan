@@ -22,7 +22,10 @@ namespace Mega_Project_List
             // numbers.CostOfTile(3.55m, 15, 5);
             // numbers.MortgageCalculator(5, 0.05m, 100000);
             // numbers.ChangeReturn(7.37m, 36.89m);
-            numbers.BinaryToDecimalAndBack(9862);
+            //numbers.BinaryToDecimalAndBack(9862);
+            //numbers.CoinFlip(69);
+            numbers.DiceRoller();
+
 
             Classic_Algorithms algorithms = new Classic_Algorithms();
             // algorithms.CollatzConjecture(500);

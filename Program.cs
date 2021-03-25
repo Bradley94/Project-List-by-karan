@@ -24,7 +24,7 @@ namespace Mega_Project_List
             // numbers.ChangeReturn(7.37m, 36.89m);
             //numbers.BinaryToDecimalAndBack(9862);
             //numbers.CoinFlip(69);
-            numbers.DiceRoller();
+            // numbers.DiceRoller();
 
 
             Classic_Algorithms algorithms = new Classic_Algorithms();
@@ -32,6 +32,7 @@ namespace Mega_Project_List
             // algorithms.SieveOfEratosthenes(100);
             // algorithms.BubbleSort(new int[] { 50, 83, 39, 1, 2, 68, 5, 99, 12, 6, 19, 3, 2, 8 });
             // algorithms.BubbleSortOptimised(new int[] { 50, 83, 39, 1, 2, 68, 5, 99, 12, 6, 19, 3, 2, 8 });
+            algorithms.MergeSort(16);
         }
     }
 }

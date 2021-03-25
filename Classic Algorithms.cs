@@ -163,9 +163,86 @@ namespace Mega_Project_List
         /// Part 2: Merge sort
         /// </summary>
         /// <param name="arr"></param>
-        public void MergeSort(int[] listOfNumbers)
+        public void MergeSort(int arraySize)
         {
+            var unsorted = new int[arraySize];
+            var rnd = new Random();
 
+            // add random integer to each index of unsorted
+            for (int i = 0; i < unsorted.Length; i++)
+            {
+                unsorted[i] = rnd.Next(1, 101);
+            }
+
+            Console.WriteLine("Unsorted data");
+            DisplayArray(unsorted);
+
+            MergeSorter(unsorted);
+
+            Console.WriteLine("Sorted data");
+            DisplayArray(unsorted);
+
+            static void MergeSorter(Span<int> unsorted)
+            {
+                var center = unsorted.Length / 2;
+
+                if (unsorted.Length > 1)
+                {
+                    // left half 0 to center
+                    MergeSorter(unsorted.Slice(0, center));
+                    // right half center to end
+                    MergeSorter(unsorted.Slice(center));
+                    // call the merge function
+                    Merge(unsorted, center);
+                }
+            }
+
+            static void Merge(Span<int> result, int StartOfRightHalf)
+            {
+                // 0...startOfRightHalf-1
+                // startOfRightHalf.unsorted.length
+
+                var unsorted = result.ToArray();
+                var lhs = 0;
+                var rhs = StartOfRightHalf;
+                var offset = 0;
+
+                while (lhs < StartOfRightHalf && rhs < unsorted.Length)
+                {
+                    if (unsorted[lhs] <= unsorted[rhs])
+                    {
+                        result[offset] = unsorted[lhs];
+                        lhs++;
+                    }
+                    else
+                    {
+                        result[offset] = unsorted[rhs];
+                        rhs++;
+                    }
+                    offset++;
+                }
+
+                while (lhs < StartOfRightHalf)
+                {
+                    result[offset] = unsorted[lhs];
+                    lhs++;
+                    offset++;
+                }
+
+                while (rhs < StartOfRightHalf)
+                {
+                    result[offset] = unsorted[rhs];
+                    rhs++;
+                    offset++;
+                }
+            }
+
+            // Join the array with commas and write to console
+            static void DisplayArray(int[] unsorted)
+            {
+                var text = string.Join(',', unsorted);
+                Console.WriteLine(text);
+            }
         }
     }
 }

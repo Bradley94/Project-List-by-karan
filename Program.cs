@@ -32,7 +32,11 @@ namespace Mega_Project_List
             // algorithms.SieveOfEratosthenes(100);
             // algorithms.BubbleSort(new int[] { 50, 83, 39, 1, 2, 68, 5, 99, 12, 6, 19, 3, 2, 8 });
             // algorithms.BubbleSortOptimised(new int[] { 50, 83, 39, 1, 2, 68, 5, 99, 12, 6, 19, 3, 2, 8 });
-            algorithms.MergeSort(16);
+            // algorithms.MergeSort(16);
+
+            Text text = new Text();
+            // text.FizzBuzz();
+            text.ReverseString("bazinga");
         }
     }
 }

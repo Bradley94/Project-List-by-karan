@@ -120,5 +120,23 @@ namespace Mega_Project_List
             }
             Console.WriteLine("Total vowels: {0}", total);
         }
+        public void IsPalindrome(string s)
+        {
+            s = s.ToLower();
+            char[] array = s.ToCharArray();
+            Array.Reverse(array);
+
+            string text = string.Join("", array);
+
+            if(s == text)
+            {
+                Console.WriteLine("Is a palindrome. ({0} | {1})", s, text);
+
+            }
+            else
+            {
+                Console.WriteLine("Is not a palindrome. ({0} | {1})", s, text);
+            }
+        }
     }
 }

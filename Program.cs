@@ -38,7 +38,8 @@ namespace Mega_Project_List
             // text.FizzBuzz();
             // text.ReverseString("forward string");
             // text.CountVowels("laughably, interruptably, indubitably, incorrigably, ostentatious.");
-            text.PigLatin("banana");
+            // text.PigLatin("banana");
+            text.IsPalindrome("Anna");
         }
     }
 }

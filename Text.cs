@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Mega_Project_List
 {
@@ -43,6 +44,51 @@ namespace Mega_Project_List
             char[] array = s.ToCharArray();
             Array.Reverse(array);
             Console.WriteLine(array);
+        }
+
+        /// <summary>
+        /// Count Vowels - Enter a string and the program counts the number of vowels in the text. 
+        /// For added complexity have it report a sum of each vowel found.
+        /// </summary>
+        /// <param name="s"></param>
+        public void CountVowels(string s)
+        {
+            var vowels = new Dictionary<char, int>()
+            {
+                {'a', 0 },
+                {'e', 0 },
+                {'i', 0 },
+                {'o', 0 },
+                {'u', 0 }
+            };
+
+            // total vowels
+            int total = 0;
+
+            s.ToLower();
+            char[] array = s.ToCharArray();
+
+            foreach (char item in array)
+            {
+                if (vowels.ContainsKey(item))
+                {
+                    total += 1;
+                    vowels[item] += 1;
+                }
+            }
+
+            for (int i = 0; i < vowels.Count; i++)
+            {
+                if (vowels.ElementAt(i).Value > 0)
+                {
+                    Console.WriteLine("Vowel {0} occurs {1} time(s).",
+                    vowels.ElementAt(i).Key,
+                    vowels.ElementAt(i).Value
+                    );
+                }
+
+            }
+            Console.WriteLine("Total vowels: {0}", total);
         }
     }
 }
